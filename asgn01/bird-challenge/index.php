@@ -22,11 +22,9 @@ class Bird {
   ];
 
   function canFly() {
-    if (isset($this->flyers[$this->commonName]) && $this->flyers[$this->commonName]) {
-      return 'This bird can fly';
-    } else {
-      return 'This bird cannot fly';
-    }
+    return ($this->flyers[$this->commonName] ?? false)
+    ? 'This bird can fly'
+    : 'This bird cannot fly';
   }
 
   function description() {
