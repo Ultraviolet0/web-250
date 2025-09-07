@@ -8,7 +8,7 @@ class Pet {
   public $species;
   public $weight;
 
-  function info() {
+  public function info() {
     return $this->name . " is a " . $this->age . " year old " . $this->color . " " . $this->species . " weighing " . $this->weight . " lbs.";
   }
 }
@@ -18,15 +18,15 @@ class Cat extends Pet {
   public $livesLeft = 9;
   public $species = 'cat';
 
-  function info() {
+  public function info() {
     return parent::info() . " They have " . $this->livesLeft . " lives remaining.";
   }
 
-  function isHungry() {
+  public function isHungry() {
     return $this->name . " is hungry and meowing! Time to feed them.";
   }
 
-  function soundMade() {
+  public function soundMade() {
     return "Meow";
   }
 }
@@ -36,7 +36,7 @@ class Dog extends Pet {
   public $pottyTrained = true;
   public $species = 'dog';
 
-  function info() {
+  public function info() {
     if ($this->age < 1) {
       return $this->name . " is a " . $this->age . " year old " . $this->color . " puppy weighing " . $this->weight . " lbs. They are a " . $this->breed . ".";
     } else {
@@ -44,7 +44,7 @@ class Dog extends Pet {
     }
   }
 
-  function soundMade() {
+  public function soundMade() {
     return "Woof";
   }
 }
@@ -56,7 +56,7 @@ class Fish extends Pet {
   public $tankSize;
   public $waterType;
 
-  function cleanTank() {
+  public function cleanTank() {
     $string = "It has been " . $this->daysSinceTankCleaned . " days since the tank has been cleaned.";
     if ($this->daysSinceTankCleaned < 7) {
       $string .= " It does not need to be cleaned again yet.";
@@ -66,11 +66,11 @@ class Fish extends Pet {
     return $string;
   }
 
-  function info() {
+  public function info() {
     return parent::info() . " They live in a " . $this->tankSize . "-gallon " . $this->waterType . " tank.";
   }
 
-  function soundMade() {
+  public function soundMade() {
     return "*bubbles*";
   }
 }
