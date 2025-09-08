@@ -1,12 +1,36 @@
 <?php 
 
 class Pet {
-  public $age;
-  public $classification = 'mammal';
-  public $color;
-  public $name;
-  public $species;
-  public $weight;
+  protected $age;
+  protected $classification = 'mammal';
+  protected $color;
+  protected $name;
+  protected $species;
+  protected $weight;
+
+  public function setAge($age) {
+    $this->age = $age;
+  }
+
+  public function setClassification($class) {
+    $this->classification = $class;
+  }
+
+  public function setColor($color) {
+    $this->color = $color;
+  }
+
+  public function setName($name) {
+    $this->name = $name;
+  }
+
+  public function setSpecies($species) {
+    $this->species = $species;
+  }
+
+  public function setWeight($weight) {
+    $this->weight = $weight;
+  }
 
   public function info() {
     return $this->name . " is a " . $this->age . " year old " . $this->color . " " . $this->species . " weighing " . $this->weight . " lbs.";
@@ -14,9 +38,17 @@ class Pet {
 }
 
 class Cat extends Pet {
-  public $isIndoor = true;
-  public $livesLeft = 9;
-  public $species = 'cat';
+  protected $isIndoor = true;
+  protected $livesLeft = 9;
+  protected $species = 'cat';
+
+  public function setIsIndoor($status) {
+    $this->isIndoor = $status;
+  }
+
+  public function setLivesLeft($lives) {
+    $this->livesLeft = $lives;
+  }
 
   public function info() {
     return parent::info() . " They have " . $this->livesLeft . " lives remaining.";
@@ -32,9 +64,17 @@ class Cat extends Pet {
 }
 
 class Dog extends Pet {
-  public $breed;
-  public $pottyTrained = true;
-  public $species = 'dog';
+  protected $breed;
+  protected $pottyTrained = true;
+  protected $species = 'dog';
+
+  public function setBreed($breed) {
+    $this->breed = $breed;
+  }
+
+  public function setPottyTrained($status) {
+    $this->pottyTrained = $status;
+  }
 
   public function info() {
     if ($this->age < 1) {
@@ -50,11 +90,23 @@ class Dog extends Pet {
 }
 
 class Fish extends Pet {
-  public $classification = 'fish';
-  public $daysSinceTankCleaned = 0;
-  public $species = 'fish';
-  public $tankSize;
-  public $waterType;
+  protected $classification = 'fish';
+  protected $daysSinceTankCleaned = 0;
+  protected $species = 'fish';
+  protected $tankSize;
+  protected $waterType;
+
+  public function setDaysSinceTankCleaned($days) {
+    $this->daysSinceTankCleaned = $days;
+  }
+
+  public function setTankSize($size) {
+    $this->tankSize = $size;
+  }
+
+  public function setWaterType($type) {
+    $this->waterType = $type;
+  }
 
   public function cleanTank() {
     $string = "It has been " . $this->daysSinceTankCleaned . " days since the tank has been cleaned.";
@@ -76,21 +128,21 @@ class Fish extends Pet {
 }
 
 $bob = new Pet;
-$bob->name = 'Bob';
-$bob->age = 2;
-$bob->species = 'gerbil';
-$bob->weight = .1875;
-$bob->color = 'tan';
+$bob->setName('Bob');
+$bob->setAge(2);
+$bob->setSpecies('gerbil');
+$bob->setWeight(.1875);
+$bob->setColor('tan');
 
 echo $bob->info();
 echo "<br>";
 
 $arthur = new Cat;
-$arthur->name = 'Arthur';
-$arthur->age = 9;
-$arthur->weight = 12;
-$arthur->color = 'grey tabby';
-$arthur->livesLeft = 7;
+$arthur->setName('Arthur');
+$arthur->setAge(9);
+$arthur->setWeight(12);
+$arthur->setColor('grey tabby');
+$arthur->setLivesLeft(7);
 
 echo $arthur->info();
 echo "<br>";
@@ -100,11 +152,11 @@ echo $arthur->soundMade();
 echo "<br>";
 
 $opal = new Dog;
-$opal->name = 'Opal';
-$opal->age = .9;
-$opal->weight = 25;
-$opal->color = 'black and white';
-$opal->breed = 'Texas Heeler';
+$opal->setName('Opal');
+$opal->setAge(2);
+$opal->setWeight(25);
+$opal->setColor('black and white');
+$opal->setBreed('Texas Heeler');
 
 echo $opal->info();
 echo "<br>";
@@ -112,14 +164,14 @@ echo $opal->soundMade();
 echo "<br>";
 
 $betty = new Fish;
-$betty->name = 'Betty';
-$betty->age = 1.5;
-$betty->species = 'platy';
-$betty->weight = .0469;
-$betty->color = 'black';
-$betty->tankSize = 20;
-$betty->waterType = 'freshwater';
-$betty->daysSinceTankCleaned = 8;
+$betty->setName('Betty');
+$betty->setAge(1.5);
+$betty->setSpecies('platy');
+$betty->setWeight(.0469);
+$betty->setColor('black');
+$betty->setTankSize(20);
+$betty->setWaterType('freshwater');
+$betty->setDaysSinceTankCleaned(6);
 
 echo $betty->info();
 echo "<br>";
