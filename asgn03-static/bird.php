@@ -2,17 +2,15 @@
 
 class Bird {
 
+  public $habitat;
   public $commonName;
   public $food = 'bugs';
   public $nestPlacement = 'tree';
-  public $conservationLevel;
-  protected $songs = [
-    'Eastern Towhee' => 'drink-your-tea!',
-    'Indigo Bunting' => 'whatwhat!!',
-    'Sparrow' => 'cheep-chirrup'
-  ];
+  public $conservationLevel = 'low';
+  public $song = 'chirp';
+  public $flyer = true;
 
-  public static $instanceCount;
+  public static $instanceCount = 0;
   public static $eggNum = 0;
 
   public static function create(string $name): static {
@@ -26,16 +24,8 @@ class Bird {
     return $this->songs[$this->commonName] ?? 'No known song.';
   }
 
-  protected $flyers = [
-    'Eastern Towhee' => true,
-    'Indigo Bunting' => true,
-    'Sparrow' => true
-  ];
-
   public function canFly() {
-    return ($this->flyers[$this->commonName] ?? false)
-    ? 'This bird can fly'
-    : 'This bird cannot fly';
+    return ($this->flyer == true) ? 'can fly' : 'is stuck on the ground';
   }
 
   public function description() {
@@ -43,12 +33,17 @@ class Bird {
   }
 }
 
-class Flycatcher extends Bird {
+class YellowBelliedFlyCatcher extends Bird {
+
+  public $commonName = 'yellow-bellied flycatcher';
+  public $food = 'mostly insects';
+  public $song = 'flat chilk';
+
   public static $eggNum = '3-4, sometimes 5.';
 }
 
-
-$sparrow = Bird::create('Sparrow');
-$sparrow->conservationLevel = 'low';
-
-echo $sparrow->description();
+class Kiwi extends Bird {
+    public $commonName = 'kiwi';
+    public $food = 'omnivorous';
+    public $flyer = false;
+}
