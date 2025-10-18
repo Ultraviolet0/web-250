@@ -43,6 +43,8 @@ $bikes = Bicycle::find_all();
       </tr>
     <?php } ?>
     </table>
+
+    <p><a href="staff/index.php">Staff Page</a></p>
   </div>
 
 </div>
