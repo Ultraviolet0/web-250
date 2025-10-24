@@ -1,0 +1,198 @@
+/* === Global Styles === */
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f6f8fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* === Layout === */
+header, footer {
+  background-color: #005f63; /* darker teal for contrast */
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header a {
+  color: #b7f3f6; /* light aqua link color */
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 .5rem;
+  transition: color .2s ease;
+}
+
+header a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem; /* adds breathing room inside main */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+footer {
+  font-size: .9rem;
+  opacity: .8;
+  padding: 1rem;
+}
+
+/* === Headers === */
+h1, h2, h3 {
+  color: #004e52;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+/* === Navigation & Links (general) === */
+a {
+  color: #008b90;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: #004e52;
+  text-decoration: underline;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: #fafafa;
+}
+
+th, td {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #007b83;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0f4f3;
+}
+
+/* === Definition Lists === */
+dl {
+  margin: 1.5rem 0;
+  padding: 1.5rem 2rem;
+  background: #f9fdfd;
+  border: 1px solid #dceaea;
+  border-radius: 8px;
+}
+
+dt {
+  font-weight: bold;
+  color: #004e52;
+  margin-top: 1rem;
+}
+
+dd {
+  margin: .25rem 0 1rem 1.5rem;
+  padding-left: .5rem;
+  border-left: 3px solid #007b83;
+  color: #333;
+}
+
+/* === Buttons (optional for links or actions) === */
+button, .btn {
+  background-color: #007b83;
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color .2s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+button:hover, .btn:hover {
+  background-color: #005f63;
+}
+
+/* === Form Submit Buttons === */
+input[type="submit"],
+button[type="submit"] {
+  background-color: #007b83;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: .6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color .2s ease, box-shadow .2s ease, transform .1s ease;
+  display: inline-block;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+  background-color: #005f63;
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
+  transform: translateY(-1px);
+}
+
+input[type="submit"]:active,
+button[type="submit"]:active {
+  background-color: #004e52;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  transform: translateY(0);
+}
+
+input[type="submit"]:disabled,
+button[type="submit"]:disabled {
+  background-color: #a4c8c9;
+  color: #eee;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* === Detail Page Section === */
+/* .detail {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,.1);
+  margin-bottom: 1.5rem;
+} */
+
+.detail img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* === Utility === */
+.center {
+  text-align: center;
+}
+
+.small-text {
+  font-size: .9rem;
+  color: #666;
+}
