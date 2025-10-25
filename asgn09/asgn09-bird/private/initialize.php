@@ -17,9 +17,10 @@
   require_once('functions.php');
   require_once('status_error_functions.php');
   require_once('database_functions.php');
+  require_once('validation_functions.php');
   
 // Load class definitions manually
-foreach(glob(__DIR__ . '/classes/*.class.php') as $file) {
+foreach(glob('classes/*.class.php') as $file) {
   require_once($file);
 }
 
@@ -35,6 +36,6 @@ spl_autoload_register('my_autoload');
 
 // DB Connect
 $database = db_connect();
-Bird::setDatabase($database);
+DatabaseObject::set_database($database);
 
 ?>

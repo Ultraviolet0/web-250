@@ -187,6 +187,14 @@ button[type="submit"]:disabled {
   margin-bottom: 1rem;
 }
 
+/* === Errors === */
+.errors {
+  border: 2px solid #f00;
+  color: #f00;
+  display: inline-block;
+  padding: 1rem;
+}
+
 /* === Utility === */
 .center {
   text-align: center;

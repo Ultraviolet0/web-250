@@ -14,15 +14,7 @@ if ($bird == false) {
 if (is_post_request()) {
 
   // Save record using post parameters
-  $args = [];
-  $args['commonName'] = $_POST['commonName'] ?? NULL;
-  $args['habitat'] = $_POST['habitat'] ?? NULL;
-  $args['food'] = $_POST['food'] ?? NULL;
-  $args['nestPlacement'] = $_POST['nestPlacement'] ?? NULL;
-  $args['behavior'] = $_POST['behavior'] ?? NULL;
-  $args['conservationID'] = $_POST['conservationID'] ?? NULL;
-  $args['backyardTips'] = $_POST['backyardTips'] ?? NULL;
-
+  $args = $_POST['bird'];
   $bird->merge_attributes($args);
   $result = $bird->save();
 
@@ -50,8 +42,7 @@ if (is_post_request()) {
   <div class="bird edit">
     <h1>Edit Bird</h1>
 
-    <?php // echo display_errors($errors); 
-    ?>
+    <?php echo display_errors($bird->errors); ?>
 
     <form action="<?php echo url_for('edit.php?id=' . h(u($id))); ?>" method="post">
 
